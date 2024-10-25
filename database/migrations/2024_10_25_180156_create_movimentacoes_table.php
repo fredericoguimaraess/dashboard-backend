@@ -10,8 +10,8 @@ return new class extends Migration
     {
         Schema::create('movimentacoes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('ativo_id');
-            $table->foreign('ativo_id')->references('id')->on('ativos')->onDelete('cascade');
+            $table->unsignedBigInteger('ativo_id')->nullable();
+            $table->foreign('ativo_id')->references('id')->on('ativos')->onDelete('set null');
             $table->date('data');
             $table->integer('quantidade');
             $table->string('tipo');

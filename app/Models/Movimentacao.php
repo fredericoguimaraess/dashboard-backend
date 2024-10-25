@@ -15,6 +15,6 @@ class Movimentacao extends Model
 
     public function ativo()
     {
-        return $this->belongsTo(Ativo::class);
+        return $this->belongsTo(Ativo::class, 'ativo_id')->withTrashed();
     }
 }
